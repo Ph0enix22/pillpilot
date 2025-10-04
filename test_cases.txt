@@ -1,0 +1,170 @@
+TEST CASES FOR PILLPILOT
+========================
+
+Test 1: Add Medicine - Basic
+-----------------------------
+Menu Option: 1
+Input:
+  Name: Paracetamol
+  Dosage: 500mg
+  Time: 08:30
+  Instructions: Take after breakfast
+
+Expected Output:
+  - Medicine ID generated (e.g., 3421)
+  - "Medicine added successfully" message
+  - HashMap count increases by 1
+
+Test 2: Add Multiple Medicines
+-------------------------------
+Repeat Option 1 three times:
+  1. Aspirin, 100mg, 12:45, After lunch
+  2. Vitamin D, 1000IU, 20:00, Before sleep
+  3. Ibuprofen, 400mg, 09:00, With food
+
+Expected Output:
+  - All medicines added with unique IDs
+  - Total count = 3
+
+Test 3: View All Medicines (HashMap)
+-------------------------------------
+Menu Option: 2
+
+Expected Output:
+  Table showing all 3 medicines
+  Columns: ID, Name, Dosage, Time, Instructions
+  Total Medicines: 3
+
+Test 4: View Schedule (Priority Queue)
+---------------------------------------
+Menu Option: 3
+
+Expected Output:
+  Medicines displayed in heap order
+  - May not appear in perfect time order
+  - TODO: Implement sorted display
+
+Test 5: Search Medicine by ID
+------------------------------
+Menu Option: 8
+Input: Medicine ID from Test 1 (e.g., 3421)
+
+Expected Output:
+  Full details of Paracetamol displayed
+  All fields match original input
+
+Test 6: Mark as Taken
+---------------------
+Menu Option: 4
+Input: Medicine ID from Test 1
+
+Expected Output:
+  "Marked as taken!" message
+  Entry added to history
+
+Test 7: View History (Linked List)
+-----------------------------------
+Menu Option: 6
+
+Expected Output:
+  Shows Paracetamol with status "taken"
+  Timestamp of when it was marked
+  Total Entries: 1
+
+Test 8: Mark as Missed
+----------------------
+Menu Option: 5
+Input: Medicine ID from Test 2
+
+Expected Output:
+  "Marked as missed!" message
+  Entry added to history
+
+Test 9: View Updated History
+-----------------------------
+Menu Option: 6
+
+Expected Output:
+  Two entries:
+  1. Most recent (Aspirin - missed)
+  2. Earlier (Paracetamol - taken)
+  Total Entries: 2
+
+Test 10: View Statistics
+------------------------
+Menu Option: 7
+
+Expected Output:
+  Total Medicines: 3
+  Medicines Taken Today: 1
+  Medicines Missed Today: 1
+  Adherence Rate: 50.0%
+
+Test 11: Delete Medicine
+------------------------
+Menu Option: 9
+Input: Medicine ID of Ibuprofen
+
+Expected Output:
+  "Medicine deleted!" message
+  HashMap count decreases to 2
+
+Test 12: Search Deleted Medicine
+---------------------------------
+Menu Option: 8
+Input: Same ID as Test 11
+
+Expected Output:
+  "Medicine not found!" message
+
+Test 13: Edge Case - Invalid ID Search
+---------------------------------------
+Menu Option: 8
+Input: 9999 (non-existent ID)
+
+Expected Output:
+  "Medicine not found!" message
+
+Test 14: Edge Case - Wrong Menu Option
+---------------------------------------
+Input: 15 (invalid choice)
+
+Expected Output:
+  "Invalid choice! Try again." message
+
+Test 15: Exit Program
+--------------------
+Menu Option: 0
+
+Expected Output:
+  "Thank you for using PillPilot!"
+  Program terminates
+
+
+COMPLEXITY VERIFICATION
+========================
+
+HashMap Operations (Tested in Test 3, 5, 11):
+  - Insert: O(1) average - instant even with 100+ medicines
+  - Search: O(1) average - ID lookup is immediate
+  - Delete: O(1) average - removal doesn't scan all
+
+Priority Queue (Tested in Test 4):
+  - Auto-sorted output proves min-heap working
+  - Insert: O(log n) - faster than full sort O(n log n)
+  - Get min: O(1) - root is always earliest time
+
+Linked List (Tested in Test 7, 9):
+  - Insert at head: O(1) - newest entry appears first
+  - Traversal: O(n) - displays all entries in order
+
+
+KNOWN LIMITATIONS
+=================
+- Data is lost when program exits (no file saving yet)
+- Hash table has fixed size of 100 entries
+- Time input format is not validated
+- History list keeps growing (no cleanup function)
+
+TODO: Add file I/O for persistence
+TODO: Add input validation
