@@ -119,8 +119,7 @@ Around 50% of patients forget to take their medicines. This system can help by:
 - `README.md` - This file
 
 ## Team - C2 Batch
-- [Syeda Midhath Javeria] - USN: [162]
-- [U Anjali] - USN: [168]
+- Syeda Midhath Javeria - USN: 162
 - [Syed Badruddin Quadri] - USN: [160]
 - [Syed Sani] - USN: [161]
 
