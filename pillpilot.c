@@ -1,7 +1,7 @@
 /*
  PILLPILOT - MEDICATION TRACKER 
  Data Structures & Applications Mini Project
- Authors: [SMJ;]
+ Authors: [SMJ;Sani;]
  Language: C
  Data Structures Used: HashMap, Priority Queue, Linked List
  -------- 
