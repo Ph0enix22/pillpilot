@@ -292,7 +292,7 @@ void displayHistory(LinkedList* list) {
     }
     printf("\nTotal Entries: %d\n", list->count);
     if(list->count == 0) {
-        printf("No medication history recorder yet.\n");
+        printf("No medication history recorded yet.\n");
     }
 }
 
