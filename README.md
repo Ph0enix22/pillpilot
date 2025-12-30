@@ -118,6 +118,7 @@ Around 50% of patients forget to take their medicines. This system can help by:
 - `test_cases.txt` - Test scenarios and expected outputs
 - `README.md` - This file
 
+## Deets
 **Course:** Data Structures & Applications (22AI34)  
 **Semester:** 3  
 **Department:** Artificial Intelligence & Machine Learning
